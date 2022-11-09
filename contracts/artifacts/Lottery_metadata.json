@@ -19,6 +19,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "getPlayers",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "manager",
 				"outputs": [
 					{
@@ -85,11 +98,11 @@
 	},
 	"sources": {
 		"contracts/Lottery.sol": {
-			"keccak256": "0x19e28539b0dcd5481a548a8304f72cf682e8865425f9738eeea3f5bf12b4456d",
+			"keccak256": "0x4e4b11bd9c3958e626ba5ab4f43496e5063b012a13bfeb9d1bab60d1d2c721dd",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://f74432fbafe1bade7075c37e34ef9f5521924d0dd9e0d2f97667871d961b78fa",
-				"dweb:/ipfs/QmRgYjy6ke69KbqsbQHMaDs9qDf2AnTQT1hvLY1KeVnQZ9"
+				"bzz-raw://ae33af4a0eb08f5c8f12f193b4b5d6d3f88a138406ff47c83c7a02f346b61ab7",
+				"dweb:/ipfs/QmZb6FBuNGvTLK1voghGhuDSeGMpxW6mFBJMWVB3WrVY7N"
 			]
 		}
 	},

@@ -10,6 +10,11 @@ contract Lottery {
         manager = msg.sender;
     }
 
+    modifier restricted() {
+        require(msg.sender == manager);
+        _;
+    }
+
     function enter() public payable {
         assert(msg.value > 0.1 ether);
         players.push(msg.sender);
@@ -24,12 +29,15 @@ contract Lottery {
             );
     }
 
-    function pickWinner() public {
-        require(msg.sender == manager);
+    function pickWinner() public restricted {
         uint256 _index = random() % players.length;
         address _winner = payable(players[_index]);
         players = new address[](0);
         (bool sent,) = _winner.call{value: address(this).balance} ("");
         require(sent, "Ether not sent");
+    }
+
+    function getPlayers() public view returns (address[] memory) {
+        return players;
     }
 }

@@ -3,8 +3,7 @@
 pragma solidity >=0.4.22 <0.9.0;
 
 // This import is automatically injected by Remix
-import "remix_tests.sol"; 
-
+import "remix_tests.sol"; // injected by remix-tests-sol
 // This import is required to use custom transaction context
 // Although it may fail compilation in 'Solidity Compiler' plugin
 // But it will work fine in 'Solidity Unit Testing' plugin

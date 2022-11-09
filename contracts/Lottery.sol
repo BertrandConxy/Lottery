@@ -11,7 +11,7 @@ contract Lottery {
     }
 
     function enter() public payable {
-        require(msg.value > 0.1 ether, "ether sent is below minimum required");
+        assert(msg.value > 0.1 ether);
         players.push(msg.sender);
     }
 
@@ -26,9 +26,10 @@ contract Lottery {
 
     function pickWinner() public {
         require(msg.sender == manager);
-        uint256 index = random() % players.length;
-        (bool sent,) = payable(players[index]).call{value: address(this).balance} ("");
-        require(sent, "Ether not sent");
+        uint256 _index = random() % players.length;
+        address _winner = payable(players[_index]);
         players = new address[](0);
+        (bool sent,) = _winner.call{value: address(this).balance} ("");
+        require(sent, "Ether not sent");
     }
 }

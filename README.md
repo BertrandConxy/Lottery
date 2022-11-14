@@ -57,7 +57,7 @@ $ npm install
 ### Compile Solidity codes
 
 ```bash
-$ solcjs --bin contract.sol
+$ solcjs --bin Lottery.sol
 ```
 
 ### Deploy to local test network or public test network
@@ -67,8 +67,9 @@ $ solcjs --bin contract.sol
 - Deploy the contract to start interacting with it
 
 ### Exposed or public methods
-- message(getter method / call)
-- setMessage(setter)
+- Enter(payable)
+- PickWinner(for manager only)
+- getPlayers
 
 ## Author
 
